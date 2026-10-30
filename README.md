@@ -167,7 +167,7 @@ JOIN operario_n o  ON o.documento = a.documento_operario;
 ''')
 ```
 
-#### 💭 Preguntas de Reflexión 4
+####  Preguntas de Reflexión 4
 * **Ejemplo de anomalías en la planilla desnormalizada:**
   * *Actualización:* El operario `1012` figuraba con dos teléfonos distintos. Corregir uno implicaba cambiarlo en múltiples filas.
   * *Inserción:* Imposible registrar a un operario nuevo en la base de datos sin que hubiese ejecutado una aplicación previa.
@@ -219,7 +219,7 @@ ALTER TABLE imagen ADD COLUMN version_modelo VARCHAR(40) DEFAULT 'yolo11n-agro-v
 ''')
 ```
 
-#### 💭 Preguntas de Reflexión 5
+####  Preguntas de Reflexión 5
 * **Clasificación vs Detección de Objetos:** La clasificación indica únicamente *qué* hay en la imagen global; la detección especifica *qué* y *dónde* está ubicado (`x, y, w, h`), siendo indispensable para cuantificar y contar la cantidad de individuos por hoja o planta.
 * **Efecto de modificar el umbral de confianza (0.25 a 0.80):** Al subirlo se reducen los **falsos positivos**, pero aumentan los **falsos negativos**. Para un agricultor es más costoso un falso negativo (no detectar el gusano cogollero a tiempo), ya que la plaga se extiende destruyendo el cultivo.
 * **IoU y NMS:** IoU (*Intersection over Union*) calcula el traslape entre dos cajas candidatas. NMS (*Non-Maximum Suppression*) usa el IoU para descartar cajas redundantes que apuntan al mismo objeto conservando la de mayor confianza.
@@ -231,4 +231,5 @@ ALTER TABLE imagen ADD COLUMN version_modelo VARCHAR(40) DEFAULT 'yolo11n-agro-v
 
 ## 📸 Archivos y Evidencias Adjuntas en este Repositorio
 * `AgroDatos_MySQL_Colab.ipynb`: Cuaderno completo resuelto y ejecutado en Google Colab.
-* Diagramas Entidad-Relación y Capturas de evidencia de la ejecución del simulador en la carpeta `/evidencias`.
+* <img src="Captura de pantalla 2026-10-30 084119.png">
+* <img src="">
