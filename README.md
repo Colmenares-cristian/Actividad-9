@@ -1,6 +1,6 @@
 # Actividad-8
 REFLEXIONES Y PROCESO DE CADA RETO 
-## 📌 Resumen General del Proyecto
+##  Resumen General del Proyecto
 En esta actividad construimos la base de datos de una empresa agrícola colombiana con fincas en Cundinamarca, Caldas y Boyacá. La solución integra:
 1. **DDL (Data Definition Language):** Creación de la estructura relacional con restricciones de integridad (`PRIMARY KEY`, `FOREIGN KEY`, `CHECK`, `UNIQUE`, `ENUM`).
 2. **DML (Data Manipulation Language):** Consultas analíticas complejas con `JOIN`, `GROUP BY`, `HAVING`, subconsultas y funciones de fecha.
@@ -9,7 +9,7 @@ En esta actividad construimos la base de datos de una empresa agrícola colombia
 
 ---
 
-## 🚀 Desarrollo de Puntos y Retos Resueltos
+##  Desarrollo de Puntos y Retos Resueltos
 
 ### Punto 1 · Modelado y Creación de Tablas (DDL)
 Se extendió el modelo relacional incorporando el control de métodos de riego y la gestión de operarios encargados de la aplicación de insumos.
@@ -37,7 +37,7 @@ SELECT * FROM operario;
 ''')
 ```
 
-#### 💭 Preguntas de Reflexión 1
+####  Preguntas de Reflexión 1
 * **¿Por qué `area_ha` es `DECIMAL(6,2)` y no `FLOAT`?**  
   `DECIMAL` almacena números de precisión exacta fija. Se evita el problema de imprecisión en punto flotante que tiene `FLOAT` al realizar redondeos binarios, garantizando exactitud en los cálculos de áreas y compras de insumos.
 * **¿Diferencia entre validar el área en HTML vs `CHECK` en MySQL?**  
@@ -77,7 +77,7 @@ JOIN producto p ON p.id_producto = a.id_producto;
 ''')
 ```
 
-#### 💭 Preguntas de Reflexión 2
+####  Preguntas de Reflexión 2
 * **Error de `id_lote = 99`:** Violación de llave foránea (`Cannot add or update a child row`). Evita que existan registros huérfanos asociados a lotes inexistentes.
 * **Imposibilidad de borrar la finca 1:** La regla `ON DELETE RESTRICT` impidió el borrado para proteger los lotes asociados. Se usaría `ON DELETE CASCADE` únicamente cuando la eliminación del registro principal requiera eliminar automáticamente sus dependientes (ej. al borrar un vuelo de dron y sus detecciones).
 * **`registro_ica` como `UNIQUE`:** Garantiza la trazabilidad única del producto comercial. Evita la duplicidad o adulteración en registros oficiales.
@@ -121,7 +121,7 @@ LIMIT 1;
 ''')
 ```
 
-#### 💭 Preguntas de Reflexión 3
+####  Preguntas de Reflexión 3
 * **Cambiar `LEFT JOIN` por `JOIN` en 3.3:** Devolvería un resultado vacío, porque un `INNER JOIN` exige intersección en ambas tablas y justamente buscábamos productos con conteo nulo.
 * **`GROUP BY` con `l.codigo` y `l.cultivo`:** Se agregan para cumplir con la regla estricta de SQL donde todo campo proyectado en el `SELECT` que no sea función de agregado debe pertenecer al agrupamiento.
 * **¿Dónde calcular el costo por hectárea (SQL vs JS)?** Es conveniente calcularlo en **SQL**. Reduce el volumen de datos enviados a través de la red (ancho de banda) y centraliza la lógica del negocio en el backend.
@@ -232,4 +232,4 @@ ALTER TABLE imagen ADD COLUMN version_modelo VARCHAR(40) DEFAULT 'yolo11n-agro-v
 ## 📸 Archivos y Evidencias Adjuntas en este Repositorio
 * `AgroDatos_MySQL_Colab.ipynb`: Cuaderno completo resuelto y ejecutado en Google Colab.
 * <img src="Captura de pantalla 2026-10-30 084119.png">
-* <img src="">
+* <img src="Captura de pantalla 2026-10-30 084148.png">
