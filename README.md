@@ -230,6 +230,6 @@ ALTER TABLE imagen ADD COLUMN version_modelo VARCHAR(40) DEFAULT 'yolo11n-agro-v
 ---
 
 ## 📸 Archivos y Evidencias Adjuntas en este Repositorio
-* `AgroDatos_MySQL_Colab.ipynb`: Cuaderno completo resuelto y ejecutado en Google Colab.
+* `https://colab.research.google.com/drive/1dGscCks5P4LRih2rRBPfZcbBDeTI5kSl?usp=sharing`: Cuaderno completo resuelto y ejecutado en Google Colab.
 * <img src="Captura de pantalla 2026-10-30 084119.png">
 * <img src="Captura de pantalla 2026-10-30 084148.png">
